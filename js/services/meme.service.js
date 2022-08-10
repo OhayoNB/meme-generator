@@ -25,6 +25,7 @@ const gImgs = [
   { id: 17, url: './img/meme-imgs/17.jpg', keywords: ['president'] },
   { id: 18, url: './img/meme-imgs/18.jpg', keywords: ['toystory', 'tv'] },
 ]
+
 var gMeme = {
   selectedImgId: 1,
   selectedLineIdx: 0,

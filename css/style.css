@@ -7,6 +7,8 @@
   --clr1: #ff7f00;
   --clr2: #ffffff;
   --clr3: #040a2c;
+  --clr4: #e3e3e3;
+  --clr5: #000000;
 }
 
 /* typography  */
@@ -14,6 +16,16 @@
 @font-face {
   font-family: montserrat;
   src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: montserrat-thin;
+  src: url(../fonts/Montserrat/Montserrat-Thin.ttf);
+}
+
+@font-face {
+  font-family: montserrat-bold;
+  src: url(../fonts/Montserrat/Montserrat-Bold.ttf);
 }
 
 /* BASICS */
@@ -34,9 +46,9 @@ body {
   font-size: 1.1875rem;
 }
 
-/* img {
-  height: 100%;
-} */
+img {
+  width: 100%;
+}
 
 a {
   color: var(--clr2);
@@ -51,6 +63,8 @@ li {
 
 .main-layout > *:not(.full) {
   max-width: 1200px;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
 }
 
 /* helpers */
@@ -69,13 +83,19 @@ li {
   align-items: center;
 }
 
-/* .flex.justify-center {
+.flex.justify-center {
   justify-content: center;
 }
 
 .flex.flex-column {
   flex-direction: column;
-} */
+}
+
+/* grid helpers */
+
+.grid {
+  display: grid;
+}
 
 /* list helpers */
 
@@ -94,11 +114,8 @@ li {
   background-color: var(--clr1);
 }
 
-.main-header .logo {
-  color: var(--clr2);
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 1.5rem;
-  letter-spacing: 0.5px;
+.main-header .logo > img {
+  width: 133px;
   margin-inline-start: 1rem;
 }
 
@@ -108,4 +125,76 @@ li {
 
 .main-header .main-nav-list > li:hover a {
   color: var(--clr3);
+}
+
+/* gallery section */
+
+.gallery-section {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  background-color: var(--clr4);
+  padding: 20px;
+}
+
+.gallery-section > img {
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+/* about */
+
+.about-section {
+  min-height: 400px;
+}
+
+.about-section .about-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-inline-start: 1.5rem;
+  margin-inline-end: 2rem;
+}
+
+.about-section .about-info {
+  color: var(--clr5);
+}
+
+.about-section .about-info h2 {
+  font-family: montserrat-bold;
+  font-size: 1.5625rem;
+}
+
+.about-section .about-info p {
+  font-size: 1.25rem;
+}
+
+.about-section .about-info ul > li {
+  height: 39px;
+  width: 39px;
+  background-color: var(--clr1);
+  border-radius: 0.75rem;
+  margin-inline-end: 9px;
+}
+
+.about-section .about-info li img {
+  width: 27px;
+  height: 25px;
+}
+
+/* footer */
+
+.main-footer {
+  min-height: 207px;
+  background-color: var(--clr1);
+}
+
+.main-footer .footer-logo > img {
+  width: 200px;
+  margin-inline-start: 1rem;
+}
+
+.main-footer .footer-copyrights {
+  font-family: montserrat-thin;
+  color: var(--clr2);
 }

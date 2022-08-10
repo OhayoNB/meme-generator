@@ -9,15 +9,15 @@
   </head>
   <body class="main-layout" onload="init()">
     <header class="main-header full flex space-between align-center">
-      <div class="logo">Memegen</div>
+      <div class="logo"><img src="./img/logo/LOGO.png" alt="MemeGen" /></div>
       <ul class="main-nav-list clean-list flex space">
         <li><a class="nav-link" href="">Gallery</a></li>
-        <li><a class="nav-link" href="">About</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
       </ul>
     </header>
 
-    <section class="gallery-section"></section>
-    <section class="editor-section">
+    <section class="gallery-section grid"></section>
+    <section class="editor-section" hidden>
       <canvas height="500" width="500"></canvas>
       <div class="actions">
         <input type="text" oninput="onChangeLineTxt(this.value)" />
@@ -27,6 +27,56 @@
         <button onclick="onSwitchLine()">Switch Line</button>
       </div>
     </section>
+
+    <section id="about" class="about-section flex align-center">
+      <img class="about-img" src="./img/about/about.jpeg" alt="" />
+      <div class="about-info">
+        <h2>Bar Ohayon</h2>
+        <p>
+          I have a strong passion for programming. I am eager to learn, develop
+          and apply new technologies. Looking for a junior position in the world
+          of programming.
+        </p>
+        <ul class="clean-list flex">
+          <li class="flex justify-center align-center">
+            <a target="_blank" href="https://www.linkedin.com/in/ohayonb/">
+              <img
+                class="social-img"
+                src="./img/icons/linkedin-logo.png"
+                alt=""
+              />
+            </a>
+          </li>
+          <li class="flex justify-center align-center">
+            <a target="_blank" href="https://www.facebook.com/bar.ohayon1/">
+              <img
+                class="social-img"
+                src="./img/icons/facebook-logo.png"
+                alt=""
+              />
+            </a>
+          </li>
+          <li class="flex justify-center align-center">
+            <a target="_blank" href="https://github.com/OhayoNB/">
+              <img
+                class="social-img"
+                src="./img/icons/github-logo.png"
+                alt=""
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer
+      class="main-footer flex full justify-center align-center flex-column"
+    >
+      <div class="footer-logo">
+        <img src="./img/logo/LOGO.png" alt="MemeGen" />
+      </div>
+      <p class="footer-copyrights">© 2022 - All Rights Reserved</p>
+    </footer>
 
     <script src="./js/services/meme.service.js"></script>
     <script src="./js/meme.controller.js"></script>
