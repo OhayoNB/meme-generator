@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>Meme Generator</title>
   </head>
-  <body class="main-layout">
+  <body class="main-layout" onload="init()">
     <header class="main-header full flex space-between align-center">
       <div class="logo">Memegen</div>
       <ul class="main-nav-list clean-list flex space">
@@ -17,6 +17,12 @@
     </header>
 
     <section class="gallery-section"></section>
-    <section class="editor-section"></section>
+    <section class="editor-section">
+      <canvas height="500" width="500"></canvas>
+    </section>
+
+    <script src="./js/services/meme.service.js"></script>
+    <script src="./js/meme.controller.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
