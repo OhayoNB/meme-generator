@@ -19,10 +19,17 @@
     <section class="gallery-section"></section>
     <section class="editor-section">
       <canvas height="500" width="500"></canvas>
+      <div class="actions">
+        <input type="text" oninput="onChangeLineTxt(this.value)" />
+        <input type="color" oninput="onChangeLineColor(this.value)" />
+        <button onclick="onChangeLineSize(1)">Increase</button>
+        <button onclick="onChangeLineSize(-1)">Decrease</button>
+      </div>
     </section>
 
     <script src="./js/services/meme.service.js"></script>
     <script src="./js/meme.controller.js"></script>
+    <script src="./js/gallery.controller.js"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>
