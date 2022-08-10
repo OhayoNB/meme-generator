@@ -44,4 +44,8 @@ function onChangeLineSize(size) {
 
 function onSwitchLine() {
   switchLine()
+  const meme = getMeme()
+
+  const elTxtInput = document.querySelector('#text-input')
+  elTxtInput.value = meme.lines[meme.selectedLineIdx].txt
 }

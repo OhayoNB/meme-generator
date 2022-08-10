@@ -120,7 +120,13 @@ li {
 }
 
 .main-header .main-nav-list > li {
+  color: var(--clr2);
   margin-inline-end: 1rem;
+}
+
+.main-header .main-nav-list > li:hover {
+  color: var(--clr3);
+  cursor: pointer;
 }
 
 .main-header .main-nav-list > li:hover a {
@@ -134,7 +140,6 @@ li {
   background-color: var(--clr4);
   min-height: 600px;
   gap: 90px;
-  display: flex;
 }
 
 .editor-section > canvas {
@@ -281,7 +286,6 @@ li {
 /* gallery section */
 
 .gallery-section {
-  display: none;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 10px;
   background-color: var(--clr4);
@@ -296,7 +300,6 @@ li {
 /* about */
 
 .about-section {
-  display: none;
   min-height: 400px;
 }
 
@@ -330,9 +333,8 @@ li {
   margin-inline-end: 9px;
 }
 
-.about-section .about-info li img {
-  width: 27px;
-  height: 25px;
+.about-section .about-info li i {
+  font-size: 1.5rem;
 }
 
 /* footer */
