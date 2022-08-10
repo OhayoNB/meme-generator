@@ -1,0 +1,111 @@
+/* SETUP */
+
+/* vars */
+
+:root {
+  /* color palete */
+  --clr1: #ff7f00;
+  --clr2: #ffffff;
+  --clr3: #040a2c;
+}
+
+/* typography  */
+
+@font-face {
+  font-family: montserrat;
+  src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+/* BASICS */
+
+/* base */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: montserrat, sans-serif;
+  color: var(--clr1);
+}
+
+body {
+  margin: 0;
+  font-size: 1.1875rem;
+}
+
+/* img {
+  height: 100%;
+} */
+
+a {
+  color: var(--clr2);
+  text-decoration: none;
+}
+
+li {
+  transition: 0.2s;
+}
+
+/* layout */
+
+.main-layout > *:not(.full) {
+  max-width: 1200px;
+}
+
+/* helpers */
+
+/* flex helpers */
+
+.flex {
+  display: flex;
+}
+
+.flex.space-between {
+  justify-content: space-between;
+}
+
+.flex.align-center {
+  align-items: center;
+}
+
+/* .flex.justify-center {
+  justify-content: center;
+}
+
+.flex.flex-column {
+  flex-direction: column;
+} */
+
+/* list helpers */
+
+.clean-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* COMPONENTS */
+
+/* main header */
+
+.main-header {
+  min-height: 66px;
+  background-color: var(--clr1);
+}
+
+.main-header .logo {
+  color: var(--clr2);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  margin-inline-start: 1rem;
+}
+
+.main-header .main-nav-list > li {
+  margin-inline-end: 1rem;
+}
+
+.main-header .main-nav-list > li:hover a {
+  color: var(--clr3);
+}
