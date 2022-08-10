@@ -13,7 +13,11 @@ function renderMeme() {
 }
 
 function drawText(lines) {
-  lines.forEach((line) => {
+  lines.forEach((line, idx) => {
+    let posY
+    if (idx === 0) posY = gElCanvas.height / 10
+    else if (idx === 1) posY = gElCanvas.height - 50
+    else if (idx > 1) posY = gElCanvas.height / 2
     gCtx.beginPath()
     gCtx.textBaseline = 'middle'
     gCtx.textAlign = 'center'
@@ -21,8 +25,8 @@ function drawText(lines) {
     gCtx.font = `${line.size}px impact`
     gCtx.fillStyle = line.color
     gCtx.strokeStyle = 'black'
-    gCtx.fillText(line.txt, 250, line.posY)
-    gCtx.strokeText(line.txt, 250, line.posY)
+    gCtx.fillText(line.txt, 250, posY)
+    gCtx.strokeText(line.txt, 250, posY)
     gCtx.closePath()
   })
 }
@@ -44,8 +48,39 @@ function onChangeLineSize(size) {
 
 function onSwitchLine() {
   switchLine()
-  const meme = getMeme()
+  changeTextInput()
+}
 
+function onAddLine(el) {
+  if (gMeme.lines.length >= 3) {
+    el.style.backgroundColor = 'red'
+    setTimeout(() => {
+      el.style.backgroundColor = 'white'
+    }, 250)
+    return
+  }
+
+  addLine()
+  changeTextInput()
+}
+
+function onRemoveLine(el) {
+  const meme = getMeme()
+  if (meme.selectedLineIdx === 0) {
+    el.style.backgroundColor = 'red'
+    setTimeout(() => {
+      el.style.backgroundColor = 'white'
+    }, 250)
+    return
+  }
+
+  removeLine()
+  renderMeme()
+  changeTextInput()
+}
+
+function changeTextInput() {
+  const meme = getMeme()
   const elTxtInput = document.querySelector('#text-input')
   elTxtInput.value = meme.lines[meme.selectedLineIdx].txt
 }

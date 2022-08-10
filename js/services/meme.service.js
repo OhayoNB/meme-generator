@@ -31,18 +31,11 @@ var gMeme = {
   selectedLineIdx: 0,
   lines: [
     {
-      txt: 'I sometimes eat Falafel',
+      txt: 'Type Text Here',
       size: 30,
       align: 'left',
       color: 'white',
       posY: 50,
-    },
-    {
-      txt: 'I sometimes eat Shnitzel',
-      size: 30,
-      align: 'left',
-      color: 'white',
-      posY: 450,
     },
   ],
 }
@@ -75,4 +68,23 @@ function switchLine() {
   const lineIdx = gMeme.selectedLineIdx
   if (lineIdx >= gMeme.lines.length - 1) gMeme.selectedLineIdx = 0
   else gMeme.selectedLineIdx++
+}
+
+function addLine() {
+  const newLine = {
+    txt: '',
+    size: 30,
+    align: 'center',
+    color: 'white',
+  }
+  gMeme.lines.push(newLine)
+  gMeme.selectedLineIdx++
+}
+
+function removeLine() {
+  const meme = getMeme()
+  const selectedLine = meme.selectedLineIdx
+
+  meme.lines.splice(selectedLine, 1)
+  meme.selectedLineIdx--
 }
