@@ -14,4 +14,15 @@ function renderGallery() {
 function onImgSelect(id) {
   setImg(id)
   renderMeme()
+  renderEditor()
+}
+
+function renderEditor() {
+  const elEditor = document.querySelector('.editor-section')
+  const elGallery = document.querySelector('.gallery-section')
+  const elAbout = document.querySelector('.about-section')
+
+  elEditor.style.display = 'flex'
+  elGallery.style.display = 'none'
+  elAbout.style.display = 'none'
 }

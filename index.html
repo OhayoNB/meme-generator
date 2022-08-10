@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>Meme Generator</title>
   </head>
   <body class="main-layout" onload="init()">
@@ -17,14 +21,95 @@
     </header>
 
     <section class="gallery-section grid"></section>
-    <section class="editor-section" hidden>
+
+    <section class="editor-section flex align-center main-layout">
       <canvas height="500" width="500"></canvas>
-      <div class="actions">
-        <input type="text" oninput="onChangeLineTxt(this.value)" />
-        <input type="color" oninput="onChangeLineColor(this.value)" />
-        <button onclick="onChangeLineSize(1)">Increase</button>
-        <button onclick="onChangeLineSize(-1)">Decrease</button>
-        <button onclick="onSwitchLine()">Switch Line</button>
+      <div class="actions flex flex-column">
+        <div class="text-actions-container">
+          <input
+            class="text-input"
+            type="text"
+            placeholder="Enter text here.."
+            oninput="onChangeLineTxt(this.value)"
+          />
+          <button class="switch-btn action-btn" onclick="onSwitchLine()">
+            <img
+              class="action-img"
+              src="./img/icons/up-and-down-opposite-double-arrows-side-by-side.png"
+              alt=""
+            />
+          </button>
+          <button class="add-btn action-btn" onclick="onSwitchLine()">
+            <img class="action-img" src="./img/icons/add.png" alt="" />
+          </button>
+          <button class="trash-btn action-btn" onclick="onSwitchLine()">
+            <img class="action-img" src="./img/icons/trash.png" alt="" />
+          </button>
+        </div>
+
+        <div class="text-sizing-container">
+          <button class="increase-btn action-btn" onclick="onChangeLineSize(1)">
+            <img
+              class="action-img"
+              src="./img/icons/increase font - icon.png"
+              alt=""
+            />
+          </button>
+          <button
+            class="decrease-btn action-btn"
+            onclick="onChangeLineSize(-1)"
+          >
+            <img
+              class="action-img"
+              src="./img/icons/decrease font - icon.png"
+              alt=""
+            />
+          </button>
+          <button class="align-left-btn action-btn" onclick="">
+            <img
+              class="action-img"
+              src="./img/icons/align-to-left.png"
+              alt=""
+            />
+          </button>
+          <button class="align-center-btn action-btn" onclick="">
+            <img
+              class="action-img"
+              src="./img/icons/center-text-alignment.png"
+              alt=""
+            />
+          </button>
+          <button class="align-right-btn action-btn" onclick="">
+            <img
+              class="action-img"
+              src="./img/icons/align-to-right.png"
+              alt=""
+            />
+          </button>
+          <select
+            class="fonts-select"
+            name="fonts-select"
+            id="fonts-select"
+            oninput=""
+          >
+            <option value="impact" selected>Impact</option>
+            <option value="arial">Arial</option>
+          </select>
+          <button class="line-up-btn action-btn" onclick="">
+            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+          </button>
+          <button class="line-down-btn action-btn" onclick="">
+            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+          </button>
+          <button class="input-text-color">
+            <img src="./img/icons/paint-board-and-brush.png" />
+            <input
+              type="color"
+              class="color-input"
+              oninput="onChangeLineColor(this.value)"
+            />
+          </button>
+        </div>
       </div>
     </section>
 

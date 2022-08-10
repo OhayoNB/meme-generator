@@ -127,9 +127,161 @@ li {
   color: var(--clr3);
 }
 
+/* editor section */
+
+.editor-section {
+  display: none;
+  background-color: var(--clr4);
+  min-height: 600px;
+  gap: 90px;
+  display: flex;
+}
+
+.editor-section > canvas {
+  margin-inline-start: 2rem;
+}
+
+.editor-section .actions {
+  height: 500px;
+  max-width: 300px;
+  margin-inline-end: 100px;
+}
+
+.editor-section .action-btn {
+  height: 50px;
+  width: 50px;
+  background-color: var(--clr2);
+  border: none;
+  border-radius: 0.75rem;
+}
+
+.editor-section .action-btn > i {
+  font-size: 30px;
+}
+
+.editor-section .action-btn:hover {
+  cursor: pointer;
+}
+
+.editor-section .action-img {
+  width: 30px;
+  height: 30px;
+}
+
+.editor-section .text-actions-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin-block-end: 43px;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas:
+    'text-input text-input text-input text-input text-input'
+    '. switch-btn add-btn trash-btn .';
+}
+
+.editor-section .text-actions-container .text-input {
+  width: 300px;
+  height: 40px;
+  border: none;
+  border-radius: 0.75rem;
+  text-indent: 1rem;
+  grid-area: text-input;
+}
+
+.editor-section .text-actions-container .switch-btn {
+  grid-area: switch-btn;
+}
+
+.editor-section .text-actions-container .add-btn {
+  grid-area: add-btn;
+}
+
+.editor-section .text-actions-container .trash-btn {
+  grid-area: trash-btn;
+}
+
+.editor-section .text-sizing-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas:
+    'increase-btn decrease-btn align-left-btn align-center-btn align-right-btn'
+    'fonts-select fonts-select line-up-btn line-down-btn input-text-color';
+}
+
+.editor-section .text-sizing-container .increase-btn {
+  grid-area: increase-btn;
+}
+
+.editor-section .text-sizing-container .decrease-btn {
+  grid-area: decrease-btn;
+}
+
+.editor-section .text-sizing-container .align-left-btn {
+  grid-area: align-left-btn;
+}
+
+.editor-section .text-sizing-container .align-center-btn {
+  grid-area: align-center-btn;
+}
+
+.editor-section .text-sizing-container .align-right-btn {
+  grid-area: align-right-btn;
+}
+
+.editor-section .text-sizing-container .fonts-select {
+  grid-area: fonts-select;
+  height: 50px;
+  border: none;
+  border-radius: 0.75rem;
+  width: 110px;
+}
+
+.editor-section .text-sizing-container .line-up-btn {
+  grid-area: line-up-btn;
+}
+
+.editor-section .text-sizing-container .line-down-btn {
+  grid-area: line-down-btn;
+}
+
+/* Color input inside a div with opacity 0 */
+.editor-section .text-sizing-container .input-text-color {
+  grid-area: input-text-color;
+  position: relative;
+  border-radius: 0.75rem;
+  border: none;
+  height: 50px;
+  width: 50px;
+  background-color: var(--clr2);
+}
+
+.editor-section .text-sizing-container .input-text-color .color-input {
+  opacity: 0;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  /* z-index: 1; */
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  border-radius: 6px;
+}
+
+.editor-section .text-sizing-container .input-text-color img {
+  width: 30px;
+  height: 30px;
+}
+/* END OF Color input inside a div with opacity 0 */
+
 /* gallery section */
 
 .gallery-section {
+  display: none;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 10px;
   background-color: var(--clr4);
@@ -144,6 +296,7 @@ li {
 /* about */
 
 .about-section {
+  display: none;
   min-height: 400px;
 }
 
