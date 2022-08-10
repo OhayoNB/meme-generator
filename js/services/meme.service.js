@@ -13,7 +13,15 @@ var gMeme = {
       txt: 'I sometimes eat Falafel',
       size: 30,
       align: 'left',
-      color: 'red',
+      color: 'white',
+      posY: 50,
+    },
+    {
+      txt: 'I sometimes eat Shnitzel',
+      size: 30,
+      align: 'left',
+      color: 'white',
+      posY: 450,
     },
   ],
 }
@@ -31,13 +39,19 @@ function setImg(id) {
 }
 
 function setLineTxt(txt) {
-  gMeme.lines[0].txt = txt
+  gMeme.lines[gMeme.selectedLineIdx].txt = txt
 }
 
 function setLineColor(color) {
-  gMeme.lines[0].color = color
+  gMeme.lines[gMeme.selectedLineIdx].color = color
 }
 
 function setLineSize(size) {
-  gMeme.lines[0].size += size
+  gMeme.lines[gMeme.selectedLineIdx].size += size
+}
+
+function switchLine() {
+  const lineIdx = gMeme.selectedLineIdx
+  if (lineIdx >= gMeme.lines.length - 1) gMeme.selectedLineIdx = 0
+  else gMeme.selectedLineIdx++
 }

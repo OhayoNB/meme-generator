@@ -2,26 +2,29 @@
 
 function renderMeme() {
   const meme = getMeme()
-  const { txt, size, color } = meme.lines[0]
+  const lines = meme.lines
+  console.log(`lines:`, lines)
   const img = new Image()
   img.src = `./img/meme-imgs/${meme.selectedImgId}.jpg`
   img.onload = () => {
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-    drawText(txt, size, color, 250, 50)
+    drawText(lines)
   }
 }
 
-function drawText(txt, size, color, x, y) {
-  gCtx.beginPath()
-  gCtx.textBaseline = 'middle'
-  gCtx.textAlign = 'center'
-  gCtx.lineWidth = 1
-  gCtx.font = `${size}px impact`
-  gCtx.fillStyle = color
-  gCtx.strokeStyle = 'black'
-  gCtx.fillText(txt, x, y)
-  gCtx.strokeText(txt, x, y)
-  gCtx.closePath()
+function drawText(lines) {
+  lines.forEach((line) => {
+    gCtx.beginPath()
+    gCtx.textBaseline = 'middle'
+    gCtx.textAlign = 'center'
+    gCtx.lineWidth = 1
+    gCtx.font = `${line.size}px impact`
+    gCtx.fillStyle = line.color
+    gCtx.strokeStyle = 'black'
+    gCtx.fillText(line.txt, 250, line.posY)
+    gCtx.strokeText(line.txt, 250, line.posY)
+    gCtx.closePath()
+  })
 }
 
 function onChangeLineTxt(txt) {
@@ -37,4 +40,8 @@ function onChangeLineColor(color) {
 function onChangeLineSize(size) {
   setLineSize(size)
   renderMeme()
+}
+
+function onSwitchLine() {
+  switchLine()
 }
