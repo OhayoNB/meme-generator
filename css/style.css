@@ -59,13 +59,6 @@ li {
   transition: 0.2s;
 }
 
-/* layout */
-
-.main-layout > *:not(.full) {
-  margin-inline-start: 1rem;
-  margin-inline-end: 1rem;
-}
-
 /* helpers */
 
 /* flex helpers */
