@@ -38,16 +38,14 @@ function drawText(lines) {
     gCtx.strokeText(line.txt, posX, posY + line.lineChangeY)
     gCtx.closePath()
     if (getMeme().selectedLineIdx === idx) {
-      const textWidth = gCtx.measureText(line.txt).width
-      //prettier-ignore
-      drawRect(posY + line.lineChangeY - line.size / 2, line.size, posX, textWidth)
+      drawRect(posY)
     }
   })
 }
 
-function drawRect(y, textHeight, x, textWidth) {
+function drawRect(y) {
   gCtx.beginPath()
-  gCtx.rect(x - textWidth / 2 - 5, y, textWidth + 10, textHeight)
+  gCtx.rect(10, y - 30, gElCanvas.width - 20, 60)
   gCtx.strokeStyle = '#ff7f00'
   gCtx.stroke()
   gCtx.closePath()

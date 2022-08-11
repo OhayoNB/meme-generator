@@ -147,7 +147,7 @@ li {
 }
 
 .editor-section .actions {
-  height: 400px;
+  height: 350px;
   max-width: 300px;
 }
 
@@ -161,6 +161,7 @@ li {
 
 .editor-section .action-btn > i {
   font-size: 25px;
+  color: var(--clr5);
 }
 
 .editor-section .action-btn:hover {
@@ -293,7 +294,7 @@ li {
 
 .share-container .download-upload-btn {
   width: 120px;
-  height: 60px;
+  height: 40px;
   border: none;
   border-radius: 0.75rem;
   background-color: var(--clr1);
@@ -450,47 +451,20 @@ li {
     margin-inline-end: auto;
   }
 
-  /* About */
-
-  .about-section {
-    flex-direction: row;
-  }
-
-  .about-section .about-img {
-    width: 300px;
-    height: 300px;
-    margin-inline-start: 1.5rem;
-    margin-inline-end: 2rem;
-    margin-block-start: 0;
-    margin-block-end: 0;
-  }
-
-  .about-section .about-info h2 {
-    font-family: montserrat-bold;
-    color: var(--clr5);
-    font-size: 1.5625rem;
-    text-align: left;
-  }
-
-  .about-section .about-info p {
-    font-size: 1.25rem;
-    text-align: left;
-    width: 100%;
-  }
-
-  .about-section .about-info ul {
-    justify-content: left;
-  }
+  /* Header */
 
   .main-header .hamburger {
     display: none;
   }
+
+  /* Editor Section */
 
   .editor-section {
     display: none;
     background-color: var(--clr4);
     min-height: 600px;
     flex-direction: row;
+    gap: 20px;
   }
 
   .editor-section > canvas {
@@ -547,6 +521,42 @@ li {
     height: 30px;
   }
   /* END OF Color input inside a div with opacity 0 */
+
+  .share-container .download-upload-btn {
+    height: 50px;
+  }
+
+  /* About */
+
+  .about-section {
+    flex-direction: row;
+  }
+
+  .about-section .about-img {
+    width: 300px;
+    height: 300px;
+    margin-inline-start: 1.5rem;
+    margin-inline-end: 2rem;
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+
+  .about-section .about-info h2 {
+    font-family: montserrat-bold;
+    color: var(--clr5);
+    font-size: 1.5625rem;
+    text-align: left;
+  }
+
+  .about-section .about-info p {
+    font-size: 1.25rem;
+    text-align: left;
+    width: 100%;
+  }
+
+  .about-section .about-info ul {
+    justify-content: left;
+  }
 }
 
 /* LARGE */
