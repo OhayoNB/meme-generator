@@ -33,7 +33,7 @@ var gMeme = {
     {
       txt: 'Type Text Here',
       size: 30,
-      align: 'left',
+      align: 'center',
       color: 'white',
       posY: 50,
     },
@@ -87,4 +87,16 @@ function removeLine() {
 
   meme.lines.splice(selectedLine, 1)
   meme.selectedLineIdx--
+}
+
+function alignLeft() {
+  gMeme.lines[gMeme.selectedLineIdx].align = 'right'
+}
+
+function alignCenter() {
+  gMeme.lines[gMeme.selectedLineIdx].align = 'center'
+}
+
+function alignRight() {
+  gMeme.lines[gMeme.selectedLineIdx].align = 'left'
 }

@@ -20,7 +20,7 @@ function drawText(lines) {
     else if (idx > 1) posY = gElCanvas.height / 2
     gCtx.beginPath()
     gCtx.textBaseline = 'middle'
-    gCtx.textAlign = 'center'
+    gCtx.textAlign = line.align
     gCtx.lineWidth = 1
     gCtx.font = `${line.size}px impact`
     gCtx.fillStyle = line.color
@@ -77,6 +77,21 @@ function onRemoveLine(el) {
   removeLine()
   renderMeme()
   changeTextInput()
+}
+
+function onChangeAlignLeft() {
+  alignLeft()
+  renderMeme()
+}
+
+function onChangeAlignCenter() {
+  alignCenter()
+  renderMeme()
+}
+
+function onChangeAlignRight() {
+  alignRight()
+  renderMeme()
 }
 
 function changeTextInput() {
