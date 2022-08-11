@@ -11,11 +11,7 @@ const gImgs = [
   { id: 7, url: './img/meme-imgs/7.jpg', keywords: ['surprised', 'baby'] },
   { id: 8, url: './img/meme-imgs/8.jpg', keywords: ['magician'] },
   { id: 9, url: './img/meme-imgs/9.jpg', keywords: ['baby', 'laughing'] },
-  {
-    id: 10,
-    url: './img/meme-imgs/10.jpg',
-    keywords: ['president', 'laughing'],
-  },
+  { id: 10, url: './img/meme-imgs/10.jpg', keywords: ['president'] },
   { id: 11, url: './img/meme-imgs/11.jpg', keywords: ['kiss', 'wrestling'] },
   { id: 12, url: './img/meme-imgs/12.jpg', keywords: ['haim', 'tv'] },
   { id: 13, url: './img/meme-imgs/13.jpg', keywords: ['actor', 'tv'] },
@@ -94,7 +90,7 @@ function removeLine() {
 }
 
 function alignLeft() {
-  gMeme.lines[gMeme.selectedLineIdx].align = 'right'
+  gMeme.lines[gMeme.selectedLineIdx].align = 'left'
 }
 
 function alignCenter() {
@@ -102,7 +98,7 @@ function alignCenter() {
 }
 
 function alignRight() {
-  gMeme.lines[gMeme.selectedLineIdx].align = 'left'
+  gMeme.lines[gMeme.selectedLineIdx].align = 'right'
 }
 
 function lineUp(value) {

@@ -13,7 +13,9 @@
   </head>
   <body class="main-layout" onload="init()">
     <header class="main-header full flex space-between align-center">
-      <div class="logo"><img src="./img/logo/LOGO.png" alt="MemeGen" /></div>
+      <div onclick="renderGallery()" class="logo">
+        <img src="./img/logo/LOGO.png" alt="MemeGen" />
+      </div>
       <ul class="main-nav-list clean-list flex space">
         <li onclick="renderGallery(); toggleMenu()">Gallery</li>
         <li>

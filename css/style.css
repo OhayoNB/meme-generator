@@ -118,6 +118,10 @@ li {
   margin-inline-start: 1rem;
 }
 
+.main-header .logo:hover {
+  cursor: pointer;
+}
+
 .main-header .main-nav-list > li {
   color: var(--clr2);
   margin-inline-end: 1rem;

@@ -17,6 +17,16 @@ function drawText(lines) {
     if (idx === 0) posY = gElCanvas.height / 10
     else if (idx === 1) posY = gElCanvas.height - 50
     else if (idx > 1) posY = gElCanvas.height / 2
+
+    let posX
+    if (line.align === 'center') {
+      posX = gElCanvas.width / 2
+    } else if (line.align === 'left') {
+      posX = 10
+    } else {
+      posX = gElCanvas.width - 10
+    }
+
     gCtx.beginPath()
     gCtx.textBaseline = 'middle'
     gCtx.textAlign = line.align
@@ -24,8 +34,8 @@ function drawText(lines) {
     gCtx.font = `${line.size}px ${line.font}`
     gCtx.fillStyle = line.color
     gCtx.strokeStyle = 'black'
-    gCtx.fillText(line.txt, gElCanvas.width / 2, posY + line.lineChangeY)
-    gCtx.strokeText(line.txt, gElCanvas.width / 2, posY + line.lineChangeY)
+    gCtx.fillText(line.txt, posX, posY + line.lineChangeY)
+    gCtx.strokeText(line.txt, posX, posY + line.lineChangeY)
     gCtx.closePath()
   })
 }
