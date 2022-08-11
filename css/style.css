@@ -246,6 +246,7 @@ li {
   border: none;
   border-radius: 0.75rem;
   width: 110px;
+  color: var(--clr5);
 }
 
 .editor-section .text-sizing-container .line-up-btn {
