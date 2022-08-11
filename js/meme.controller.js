@@ -3,7 +3,6 @@
 function renderMeme() {
   const meme = getMeme()
   const lines = meme.lines
-  console.log(`lines:`, lines)
   const img = new Image()
   img.src = `./img/meme-imgs/${meme.selectedImgId}.jpg`
   img.onload = () => {
@@ -22,11 +21,12 @@ function drawText(lines) {
     gCtx.textBaseline = 'middle'
     gCtx.textAlign = line.align
     gCtx.lineWidth = 1
-    gCtx.font = `${line.size}px impact`
+    gCtx.font = `${line.size}px ${line.font}`
     gCtx.fillStyle = line.color
     gCtx.strokeStyle = 'black'
-    gCtx.fillText(line.txt, 250, posY)
-    gCtx.strokeText(line.txt, 250, posY)
+    console.log(`gElCanvas.width / 2:`, gElCanvas.width / 2)
+    gCtx.fillText(line.txt, gElCanvas.width / 2, posY + line.lineChangeY)
+    gCtx.strokeText(line.txt, gElCanvas.width / 2, posY + line.lineChangeY)
     gCtx.closePath()
   })
 }
@@ -49,6 +49,7 @@ function onChangeLineSize(size) {
 function onSwitchLine() {
   switchLine()
   changeTextInput()
+  changeFontSelect()
 }
 
 function onAddLine(el) {
@@ -62,6 +63,7 @@ function onAddLine(el) {
 
   addLine()
   changeTextInput()
+  changeFontSelect()
 }
 
 function onRemoveLine(el) {
@@ -77,6 +79,7 @@ function onRemoveLine(el) {
   removeLine()
   renderMeme()
   changeTextInput()
+  changeFontSelect()
 }
 
 function onChangeAlignLeft() {
@@ -94,8 +97,29 @@ function onChangeAlignRight() {
   renderMeme()
 }
 
+function onChangeLineUp(value) {
+  lineUp(value)
+  renderMeme()
+}
+
+function onChangeLineDown(value) {
+  lineDown(value)
+  renderMeme()
+}
+
+function onChangeLineFont(font) {
+  setLineFont(font)
+  renderMeme()
+}
+
 function changeTextInput() {
   const meme = getMeme()
   const elTxtInput = document.querySelector('#text-input')
   elTxtInput.value = meme.lines[meme.selectedLineIdx].txt
+}
+
+function changeFontSelect() {
+  const meme = getMeme()
+  const elFontSelect = document.querySelector('#fonts-select')
+  elFontSelect.value = meme.lines[meme.selectedLineIdx].font
 }

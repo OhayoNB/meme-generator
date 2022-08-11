@@ -36,6 +36,8 @@ var gMeme = {
       align: 'center',
       color: 'white',
       posY: 50,
+      lineChangeY: 0,
+      font: 'impact',
     },
   ],
 }
@@ -76,6 +78,8 @@ function addLine() {
     size: 30,
     align: 'center',
     color: 'white',
+    lineChangeY: 0,
+    font: 'impact',
   }
   gMeme.lines.push(newLine)
   gMeme.selectedLineIdx++
@@ -99,4 +103,16 @@ function alignCenter() {
 
 function alignRight() {
   gMeme.lines[gMeme.selectedLineIdx].align = 'left'
+}
+
+function lineUp(value) {
+  gMeme.lines[gMeme.selectedLineIdx].lineChangeY += value
+}
+
+function lineDown(value) {
+  gMeme.lines[gMeme.selectedLineIdx].lineChangeY += value
+}
+
+function setLineFont(font) {
+  gMeme.lines[gMeme.selectedLineIdx].font = font
 }

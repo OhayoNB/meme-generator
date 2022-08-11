@@ -25,7 +25,7 @@
     <section
       class="editor-section flex align-center justify-center main-layout"
     >
-      <canvas height="500" width="500"></canvas>
+      <canvas height="450" width="450"></canvas>
       <div class="actions flex flex-column">
         <div class="text-actions-container">
           <input
@@ -102,15 +102,18 @@
             class="fonts-select"
             name="fonts-select"
             id="fonts-select"
-            oninput=""
+            oninput="onChangeLineFont(this.value)"
           >
             <option value="impact" selected>Impact</option>
             <option value="arial">Arial</option>
           </select>
-          <button class="line-up-btn action-btn" onclick="">
+          <button class="line-up-btn action-btn" onclick="onChangeLineUp(-1)">
             <i class="fa fa-arrow-up" aria-hidden="true"></i>
           </button>
-          <button class="line-down-btn action-btn" onclick="">
+          <button
+            class="line-down-btn action-btn"
+            onclick="onChangeLineDown(1)"
+          >
             <i class="fa fa-arrow-down" aria-hidden="true"></i>
           </button>
           <button class="input-text-color">
@@ -121,6 +124,11 @@
               oninput="onChangeLineColor(this.value)"
             />
           </button>
+        </div>
+
+        <div class="share-container">
+          <button class="download-share-btn download-btn">Download</button>
+          <button class="download-share-btn share-btn">Share</button>
         </div>
       </div>
     </section>

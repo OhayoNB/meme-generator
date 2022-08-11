@@ -139,17 +139,17 @@ li {
   display: none;
   background-color: var(--clr4);
   min-height: 600px;
-  gap: 90px;
 }
 
 .editor-section > canvas {
+  max-width: 600px;
   margin-inline-start: 2rem;
 }
 
 .editor-section .actions {
-  height: 500px;
+  height: 450px;
   max-width: 300px;
-  margin-inline-end: 100px;
+  margin-inline-end: 75px;
 }
 
 .editor-section .action-btn {
@@ -210,6 +210,7 @@ li {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2, 1fr);
+  margin-block-end: 20px;
   gap: 10px;
   justify-items: center;
   align-items: center;
@@ -282,6 +283,36 @@ li {
   height: 30px;
 }
 /* END OF Color input inside a div with opacity 0 */
+
+.share-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 60px;
+  grid-template-areas: 'download-btn share-btn';
+}
+
+.share-container .download-share-btn {
+  width: 120px;
+  height: 60px;
+  border: none;
+  border-radius: 0.75rem;
+  background-color: var(--clr1);
+  color: var(--clr2);
+  font-family: montserrat;
+}
+
+.share-container .download-share-btn:hover {
+  cursor: pointer;
+}
+
+.download-btn {
+  grid-area: download-btn;
+}
+
+.share-btn {
+  grid-area: share-btn;
+}
 
 /* gallery section */
 
