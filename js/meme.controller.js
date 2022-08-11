@@ -24,7 +24,6 @@ function drawText(lines) {
     gCtx.font = `${line.size}px ${line.font}`
     gCtx.fillStyle = line.color
     gCtx.strokeStyle = 'black'
-    console.log(`gElCanvas.width / 2:`, gElCanvas.width / 2)
     gCtx.fillText(line.txt, gElCanvas.width / 2, posY + line.lineChangeY)
     gCtx.strokeText(line.txt, gElCanvas.width / 2, posY + line.lineChangeY)
     gCtx.closePath()

@@ -18,3 +18,11 @@ function addListeners() {
     resizeCanvas()
   })
 }
+
+function toggleMenu(el) {
+  document
+    .querySelector('.main-nav-list')
+    .classList.toggle('mobile-menu-height')
+
+  el.classList.toggle('change')
+}
