@@ -123,3 +123,21 @@ function changeFontSelect() {
   const elFontSelect = document.querySelector('#fonts-select')
   elFontSelect.value = meme.lines[meme.selectedLineIdx].font
 }
+
+function resizeCanvas() {
+  let widths = [0, 520, 850]
+  let elCanvas = document.querySelector('canvas')
+  if (window.innerWidth >= widths[0] && window.innerWidth < widths[1]) {
+    elCanvas.height = 320
+    elCanvas.width = 320
+    renderMeme()
+  } else if (window.innerWidth >= widths[1] && window.innerWidth < widths[2]) {
+    elCanvas.height = 400
+    elCanvas.width = 400
+    renderMeme()
+  } else {
+    elCanvas.height = 450
+    elCanvas.width = 450
+    renderMeme()
+  }
+}

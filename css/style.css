@@ -149,7 +149,7 @@ li {
 .editor-section .actions {
   height: 450px;
   max-width: 300px;
-  margin-inline-end: 75px;
+  margin-inline-end: 30px;
 }
 
 .editor-section .action-btn {
