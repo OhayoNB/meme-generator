@@ -144,17 +144,17 @@ li {
   display: none;
   background-color: var(--clr4);
   min-height: 600px;
+  flex-direction: column;
 }
 
 .editor-section > canvas {
   max-width: 600px;
-  margin-inline-start: 2rem;
+  margin-block-start: 1rem;
 }
 
 .editor-section .actions {
-  height: 450px;
+  height: 400px;
   max-width: 300px;
-  margin-inline-end: 30px;
 }
 
 .editor-section .action-btn {
@@ -294,10 +294,10 @@ li {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 60px;
-  grid-template-areas: 'download-btn share-btn';
+  grid-template-areas: 'download-btn upload-btn';
 }
 
-.share-container .download-share-btn {
+.share-container .download-upload-btn {
   width: 120px;
   height: 60px;
   border: none;
@@ -307,7 +307,7 @@ li {
   font-family: montserrat;
 }
 
-.share-container .download-share-btn:hover {
+.share-container .download-upload-btn:hover {
   cursor: pointer;
 }
 
@@ -315,8 +315,8 @@ li {
   grid-area: download-btn;
 }
 
-.share-btn {
-  grid-area: share-btn;
+.upload-btn {
+  grid-area: upload-btn;
 }
 
 /* gallery section */
@@ -451,7 +451,7 @@ li {
 
 @media (min-width: 800px) {
   .main-layout > *:not(.full) {
-    max-width: 800px;
+    max-width: 1000px;
     margin-inline-start: auto;
     margin-inline-end: auto;
   }
@@ -490,6 +490,23 @@ li {
 
   .main-header .hamburger {
     display: none;
+  }
+
+  .editor-section {
+    display: none;
+    background-color: var(--clr4);
+    min-height: 600px;
+    flex-direction: row;
+  }
+
+  .editor-section > canvas {
+    margin-inline-start: 0;
+    margin-inline-start: 2rem;
+  }
+
+  .editor-section .actions {
+    height: 450px;
+    margin-inline-end: 80px;
   }
 }
 

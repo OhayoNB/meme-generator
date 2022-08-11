@@ -37,7 +37,20 @@ function drawText(lines) {
     gCtx.fillText(line.txt, posX, posY + line.lineChangeY)
     gCtx.strokeText(line.txt, posX, posY + line.lineChangeY)
     gCtx.closePath()
+    if (getMeme().selectedLineIdx === idx) {
+      const textWidth = gCtx.measureText(line.txt).width
+      //prettier-ignore
+      drawRect(posY + line.lineChangeY - line.size / 2, line.size, posX, textWidth)
+    }
   })
+}
+
+function drawRect(y, textHeight, x, textWidth) {
+  gCtx.beginPath()
+  gCtx.rect(x - textWidth / 2 - 5, y, textWidth + 10, textHeight)
+  gCtx.strokeStyle = '#ff7f00'
+  gCtx.stroke()
+  gCtx.closePath()
 }
 
 function onChangeLineTxt(txt) {
@@ -59,6 +72,7 @@ function onSwitchLine() {
   switchLine()
   changeTextInput()
   changeFontSelect()
+  renderMeme()
 }
 
 function onAddLine(el) {
@@ -73,6 +87,7 @@ function onAddLine(el) {
   addLine()
   changeTextInput()
   changeFontSelect()
+  renderMeme()
 }
 
 function onRemoveLine(el) {
@@ -134,7 +149,7 @@ function changeFontSelect() {
 }
 
 function resizeCanvas() {
-  let widths = [0, 520, 850]
+  let widths = [0, 520, 800]
   let elCanvas = document.querySelector('canvas')
   if (window.innerWidth >= widths[0] && window.innerWidth < widths[1]) {
     elCanvas.height = 320

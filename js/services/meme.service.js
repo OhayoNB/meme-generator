@@ -28,7 +28,7 @@ var gMeme = {
   lines: [
     {
       txt: 'Type Text Here',
-      size: 30,
+      size: 35,
       align: 'center',
       color: 'white',
       posY: 50,
