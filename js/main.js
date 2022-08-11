@@ -19,10 +19,10 @@ function addListeners() {
   })
 }
 
-function toggleMenu(el) {
+function toggleMenu() {
   document
     .querySelector('.main-nav-list')
     .classList.toggle('mobile-menu-height')
 
-  el.classList.toggle('change')
+  document.querySelector('.hamburger').classList.toggle('change')
 }
