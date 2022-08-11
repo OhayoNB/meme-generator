@@ -152,8 +152,8 @@ function resizeCanvas() {
   let widths = [0, 520, 800]
   let elCanvas = document.querySelector('canvas')
   if (window.innerWidth >= widths[0] && window.innerWidth < widths[1]) {
-    elCanvas.height = 320
-    elCanvas.width = 320
+    elCanvas.height = 350
+    elCanvas.width = 350
     renderMeme()
   } else if (window.innerWidth >= widths[1] && window.innerWidth < widths[2]) {
     elCanvas.height = 400
