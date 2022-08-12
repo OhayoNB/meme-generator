@@ -1,6 +1,7 @@
 'use strict'
 
 const gKeywordSearchCountMap = { funny: 12, cat: 16, baby: 2 }
+let gFilterBy = ''
 const gImgs = [
   { id: 1, url: './img/meme-imgs/1.jpg', keywords: ['president'] },
   { id: 2, url: './img/meme-imgs/2.jpg', keywords: ['dog', 'baby'] },
@@ -42,8 +43,12 @@ function getMeme() {
   return gMeme
 }
 
-function getMemesImgs() {
-  return gImgs
+function getMemesImgsForDisplay() {
+  const memesImgs = gImgs.filter((image) =>
+    image.keywords.some((keyword) => keyword.includes(gFilterBy))
+  )
+
+  return memesImgs
 }
 
 function setImg(id) {
@@ -162,4 +167,10 @@ function doUploadImg(imgDataUrl, onSuccess) {
     .catch((err) => {
       console.error(err)
     })
+}
+
+function setMemeFilter(filterBy) {
+  if (filterBy !== undefined) gFilterBy = filterBy
+
+  console.log(`gFilterBy:`, gFilterBy)
 }

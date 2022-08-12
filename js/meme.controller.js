@@ -38,7 +38,6 @@ function drawText(lines) {
     gCtx.strokeText(line.txt, posX, posY + line.lineChangeY)
     gCtx.closePath()
     if (getMeme().selectedLineIdx === idx) {
-      console.log('sss')
       drawRect(posY)
     }
   })
