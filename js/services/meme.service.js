@@ -173,6 +173,4 @@ function doUploadImg(imgDataUrl, onSuccess) {
 
 function setMemeFilter(filterBy) {
   if (filterBy !== undefined) gFilterBy = filterBy
-
-  console.log(`gFilterBy:`, gFilterBy)
 }
