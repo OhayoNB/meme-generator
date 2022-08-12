@@ -539,7 +539,7 @@ li {
 
   .editor-section .actions {
     height: 450px;
-    margin-inline-end: 80px;
+    margin-inline-end: 25px;
   }
 
   .editor-section .action-btn {
@@ -636,5 +636,9 @@ li {
 @media (min-width: 1060px) {
   .main-layout > *:not(.full) {
     max-width: 1200px;
+  }
+
+  .editor-section .actions {
+    margin-inline-end: 80px;
   }
 }

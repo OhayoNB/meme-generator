@@ -45,7 +45,9 @@ function getMeme() {
 
 function getMemesImgsForDisplay() {
   const memesImgs = gImgs.filter((image) =>
-    image.keywords.some((keyword) => keyword.includes(gFilterBy))
+    image.keywords.some((keyword) =>
+      keyword.toLowerCase().includes(gFilterBy.toLowerCase())
+    )
   )
 
   return memesImgs
