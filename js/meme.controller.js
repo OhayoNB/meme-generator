@@ -38,6 +38,7 @@ function drawText(lines) {
     gCtx.strokeText(line.txt, posX, posY + line.lineChangeY)
     gCtx.closePath()
     if (getMeme().selectedLineIdx === idx) {
+      console.log('sss')
       drawRect(posY)
     }
   })
@@ -162,4 +163,18 @@ function resizeCanvas() {
     elCanvas.width = 450
     renderMeme()
   }
+}
+
+// FIX Meme file with rect on first click
+function onDownloadMeme(el) {
+  let selectedMemeLine = gMeme.selectedLineIdx
+  removeSelectedLine()
+  renderMeme()
+
+  downloadMeme(el)
+  // gMeme.selectedLineIdx = selectedMemeLine
+}
+
+function onUploadMeme() {
+  uploadMeme()
 }
