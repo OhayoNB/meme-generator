@@ -164,16 +164,21 @@ function resizeCanvas() {
   }
 }
 
-// FIX Meme file with rect on first click
 function onDownloadMeme(el) {
   let selectedMemeLine = gMeme.selectedLineIdx
   removeSelectedLine()
   renderMeme()
 
   downloadMeme(el)
-  // gMeme.selectedLineIdx = selectedMemeLine
+  gMeme.selectedLineIdx = selectedMemeLine
 }
 
 function onUploadMeme() {
   uploadMeme()
+}
+
+function onRandomMeme() {
+  generateRandomMeme()
+  renderEditor()
+  renderMeme()
 }

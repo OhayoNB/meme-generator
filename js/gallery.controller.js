@@ -22,6 +22,7 @@ function renderGallery() {
 
 function onImgSelect(id) {
   setImg(id)
+  setDefaultMeme(id)
   renderMeme()
   renderEditor()
 }

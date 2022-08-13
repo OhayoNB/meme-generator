@@ -29,7 +29,7 @@
         <input onkeyup="onSetFilter(this.value)" type="text" class="filter-input" placeholder="Enter search keyword">
         <img class="search-img" src="./img/icons/search-icon.png" alt="">
       </div>
-      <button class="flexible-btn">I'm flexible</button>
+      <button onclick="onRandomMeme()" class="flexible-btn">I'm flexible</button>
     </section>
 
     <section class="gallery-section grid"></section>
@@ -70,6 +70,7 @@
           <select class="fonts-select" name="fonts-select" id="fonts-select" oninput="onChangeLineFont(this.value)">
             <option value="impact" selected>Impact</option>
             <option value="arial">Arial</option>
+            <option value="david">David</option>
           </select>
           <button class="line-up-btn action-btn" onclick="onChangeLineUp(-2)">
             <i class="fa fa-arrow-up" aria-hidden="true"></i>
@@ -128,6 +129,7 @@
       <p class="footer-copyrights">© 2022 - All Rights Reserved</p>
     </footer>
 
+    <script src="./js/services/util.service.js"></script>
     <script src="./js/services/meme.service.js"></script>
     <script src="./js/meme.controller.js"></script>
     <script src="./js/gallery.controller.js"></script>

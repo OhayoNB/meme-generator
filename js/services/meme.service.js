@@ -1,6 +1,5 @@
 'use strict'
 
-const gKeywordSearchCountMap = { funny: 12, cat: 16, baby: 2 }
 let gFilterBy = ''
 const gImgs = [
   { id: 1, url: './img/meme-imgs/1.jpg', keywords: ['president'] },
@@ -132,7 +131,6 @@ function downloadMeme(el) {
 function uploadMeme() {
   const imgDataUrl = gElCanvas.toDataURL('image/jpeg')
 
-  // A function to be called if request succeeds
   function onSuccess(uploadedImgUrl) {
     const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
 
@@ -173,4 +171,55 @@ function doUploadImg(imgDataUrl, onSuccess) {
 
 function setMemeFilter(filterBy) {
   if (filterBy !== undefined) gFilterBy = filterBy
+}
+
+function generateRandomMeme() {
+  let randomImg = getRandomIntInclusive(1, gImgs.length)
+  let lines = []
+
+  lines.push({
+    txt: getRandomMemeStr(),
+    size: getRandomIntInclusive(30, 50),
+    align: 'center',
+    color: getRandomColor(),
+    posY: 50,
+    lineChangeY: 0,
+    font: getRandomFont(),
+  })
+
+  if (getRandomIntInclusive(0, 1)) {
+    lines.push({
+      txt: getRandomMemeStr(),
+      size: getRandomIntInclusive(30, 50),
+      align: 'center',
+      color: getRandomColor(),
+      posY: 50,
+      lineChangeY: 0,
+      font: getRandomFont(),
+    })
+  }
+
+  gMeme = {
+    selectedImgId: randomImg,
+    selectedLineIdx: 0,
+    lines,
+  }
+}
+
+function setDefaultMeme(imgId) {
+  gMeme = {
+    selectedImgId: imgId,
+    selectedLineIdx: 0,
+    lines: [
+      {
+        txt: 'Type Text Here',
+        size: 35,
+        align: 'center',
+        color: 'white',
+        posY: 50,
+        lineChangeY: 0,
+        font: 'impact',
+      },
+    ],
+  }
 }

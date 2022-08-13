@@ -537,6 +537,11 @@ li {
     display: none;
   }
 
+  /* Filter Section */
+  .filter-section {
+    gap: 60px;
+  }
+
   /* Editor Section */
 
   .editor-section {
