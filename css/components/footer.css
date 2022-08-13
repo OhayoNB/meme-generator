@@ -1,0 +1,14 @@
+.main-footer {
+  min-height: 207px;
+  background-color: var(--clr1);
+}
+
+.main-footer .footer-logo > img {
+  width: 200px;
+  margin-inline-start: 1rem;
+}
+
+.main-footer .footer-copyrights {
+  font-family: montserrat-thin;
+  color: var(--clr2);
+}

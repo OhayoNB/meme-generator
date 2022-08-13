@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: montserrat, sans-serif;
+  color: var(--clr1);
+}
+
+body {
+  margin: 0;
+  font-size: 1.1875rem;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  color: var(--clr2);
+  text-decoration: none;
+}
+
+li {
+  transition: 0.2s;
+}

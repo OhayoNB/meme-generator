@@ -1,0 +1,47 @@
+.about-section {
+  min-height: 400px;
+  flex-direction: column;
+}
+
+.about-section .about-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-block-start: 1rem;
+  margin-block-end: 0.5rem;
+}
+
+.about-section .about-info {
+  color: var(--clr5);
+}
+
+.about-section .about-info h2 {
+  font-family: montserrat-bold;
+  color: var(--clr1);
+  font-size: 1.375rem;
+  text-align: center;
+}
+
+.about-section .about-info p {
+  font-size: 0.9375rem;
+  text-align: center;
+  width: 300px;
+}
+
+.about-section .about-info ul {
+  justify-content: center;
+  margin-block-end: 10px;
+}
+
+.about-section .about-info ul > li {
+  height: 39px;
+  width: 39px;
+  background-color: var(--clr1);
+  border-radius: 0.75rem;
+  margin-inline-end: 9px;
+}
+
+.about-section .about-info li i {
+  font-size: 1.5rem;
+}

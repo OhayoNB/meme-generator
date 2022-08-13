@@ -1,0 +1,29 @@
+.main-header {
+  min-height: 66px;
+  background-color: var(--clr1);
+}
+
+.main-header .logo > img {
+  width: 133px;
+  margin-inline-start: 1rem;
+}
+
+.main-header .logo:hover {
+  cursor: pointer;
+}
+
+.main-header .main-nav-list > li {
+  color: var(--clr2);
+  margin-inline-end: 1rem;
+  margin: 1rem;
+  text-align: center;
+}
+
+.main-header .main-nav-list > li:hover {
+  color: var(--clr3);
+  cursor: pointer;
+}
+
+.main-header .main-nav-list > li:hover a {
+  color: var(--clr3);
+}
