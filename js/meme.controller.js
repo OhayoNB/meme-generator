@@ -1,17 +1,17 @@
 'use strict'
 
-function renderMeme() {
+function renderMeme(func = null) {
   const meme = getMeme()
   const lines = meme.lines
   const img = new Image()
   img.src = `./img/meme-imgs/${meme.selectedImgId}.jpg`
   img.onload = () => {
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-    drawText(lines)
+    drawText(lines, func)
   }
 }
 
-function drawText(lines) {
+function drawText(lines, func = null) {
   lines.forEach((line, idx) => {
     let posY
     if (idx === 0) posY = gElCanvas.height / 10
@@ -41,6 +41,8 @@ function drawText(lines) {
       drawRect(posY)
     }
   })
+
+  if (func) func(gElCanvas.toDataURL('image/jpeg'))
 }
 
 function drawRect(y) {
@@ -164,13 +166,19 @@ function resizeCanvas() {
   }
 }
 
-function onDownloadMeme(el) {
-  let selectedMemeLine = gMeme.selectedLineIdx
-  removeSelectedLine()
-  renderMeme()
+function onDownloadMeme() {
+  const selectedMemeLine = gMeme.selectedLineIdx
+  const elDownload = document.querySelector('.download-meme')
 
-  downloadMeme(el)
-  gMeme.selectedLineIdx = selectedMemeLine
+  removeSelectedLine()
+  renderMeme(downloadMeme)
+
+  function downloadMeme(memeImg) {
+    elDownload.href = memeImg
+    elDownload.click()
+    gMeme.selectedLineIdx = selectedMemeLine
+    renderMeme()
+  }
 }
 
 function onUploadMeme() {

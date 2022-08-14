@@ -212,3 +212,7 @@
   font-size: 0.833rem;
   height: 40px;
 }
+
+.share-container .download-meme {
+  display: none;
+}
